@@ -8,8 +8,25 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Scanner;
 
+// Antagande: IOHandler är en klass som hanterar I/O-operationer
+class IOHandler {
+    private Scanner scanner;
+
+    public IOHandler(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
+    public String nextLine() {
+        return scanner.nextLine();
+    }
+
+    public boolean hasNextInt() {
+        return scanner.hasNextInt();
+    }
+}
+
 public class IOHandlerTest {
-    
+
     private IOHandler createIOHandler(InputStream input) {
         return new IOHandler(new Scanner(input));
     }
